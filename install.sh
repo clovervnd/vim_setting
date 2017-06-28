@@ -1,4 +1,10 @@
 #!/bin/bash 
+
+sudo apt-get install vim
+sudo apt-get install ctags
+sudo apt-get install cscope
+cp mkcscope.sh /usr/bin/
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 rm ~/.vimrc_old
 mv ~/.vimrc ~/.vimrc_old
