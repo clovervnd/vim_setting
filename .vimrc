@@ -52,7 +52,7 @@ set hlsearch
 " Ctags setting 
 
 set tags=./tags,tags
-set tags+=~/Desktop/Dual-radio-simulation
+set tags+=~/Desktop/Double-MAC/tags
 
 "-------------------------------------------------------------------------------------------
 " Cscope setting 
@@ -86,13 +86,13 @@ map <F5> :TrinityToggleAll<CR>
 "-------------------------------------------------------------------------------------------
 " Source Explorer settings
 " F8 Key = SrcExpl Toggling
-"nmap <C-H> <C-W>h                            
+nmap <C-H> <C-W>h                            
 "왼쪽 창으로 이동
-"nmap <C-J> <C-W>j                              
+nmap <C-J> <C-W>j                              
 "하단(preview) 창으로 이동
-"nmap <C-K> <C-W>k                             
+nmap <C-K> <C-W>k                             
 "상단 창으로 이동
-"nmap <C-L> <C-W>l                              
+nmap <C-L> <C-W>l                              
 "오른쪽 창으로 이동
 
 " // The switch of the Source Explorer                                         " 
@@ -130,13 +130,13 @@ let g:SrcExpl_isUpdateTags = 0
 " //  create/update a tags file                                                " 
 let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
 "                                                                              " 
-" // Set "<F12>" key for updating the tags file artificially                   " 
+" // Set "<F11>" key for updating the tags file artificially                   " 
 let g:SrcExpl_updateTagsKey = "<F11>" 
 "                                                                              " 
-" // Set "<F3>" key for displaying the previous definition in the jump list    " 
+" // Set "<F9>" key for displaying the previous definition in the jump list    " 
 let g:SrcExpl_prevDefKey = "<F9>" 
 "                                                                              " 
-" // Set "<F4>" key for displaying the next definition in the jump list        " 
+" // Set "<F10>" key for displaying the next definition in the jump list        " 
 let g:SrcExpl_nextDefKey = "<F10>" 
 
 "-------------------------------------------------------------------------------------------
@@ -221,10 +221,8 @@ filetype plugin indent on    " required
 Plugin 'The-NERD-Tree'
 Plugin 'AutoComplPop'
 Plugin 'taglist.vim'
-Plugin 'taglist-plus'
-Plugin 'trinity.vim'
 " Plugin SrcExpl
 " https://github.com/vim-scripts/SrcExpl.git 
 " Plugin trinity
-" https://github.com/vim-scripts/Trinity
+" https://github.com/vim-scripts/Trinity.git
 "-------------------------------------------------------------------------------------------
