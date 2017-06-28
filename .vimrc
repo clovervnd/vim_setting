@@ -116,6 +116,7 @@ let g:SrcExpl_gobackKey = "<SPACE>"
 let g:SrcExpl_pluginList = [ 
          \ "__Tag_List__", 
          \ "_NERD_tree_" 
+         \ "Source_Explorer" 
      \ ] 
                                                                               
 " // Enable/Disable the local definition searching, and note that this is not  " 
@@ -130,14 +131,14 @@ let g:SrcExpl_isUpdateTags = 0
 " //  create/update a tags file                                                " 
 let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
 "                                                                              " 
-" // Set "<F11>" key for updating the tags file artificially                   " 
-let g:SrcExpl_updateTagsKey = "<F11>" 
+" // Set "<F8>" key for updating the tags file artificially                   " 
+let g:SrcExpl_updateTagsKey = "<F8>" 
 "                                                                              " 
-" // Set "<F9>" key for displaying the previous definition in the jump list    " 
-let g:SrcExpl_prevDefKey = "<F9>" 
+" // Set "<F6>" key for displaying the previous definition in the jump list    " 
+let g:SrcExpl_prevDefKey = "<F6>" 
 "                                                                              " 
-" // Set "<F10>" key for displaying the next definition in the jump list        " 
-let g:SrcExpl_nextDefKey = "<F10>" 
+" // Set "<F7>" key for displaying the next definition in the jump list        " 
+let g:SrcExpl_nextDefKey = "<F7>" 
 
 "-------------------------------------------------------------------------------------------
 " AutoCompletePop settings 
