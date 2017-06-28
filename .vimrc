@@ -46,7 +46,7 @@ set nowrap
 
 set hlsearch
 
-execute pathogen#infect()
+"execute pathogen#infect()
 
 "-------------------------------------------------------------------------------------------
 " Ctags setting 
