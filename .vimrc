@@ -125,7 +125,7 @@ let g:SrcExpl_pluginList = [
 let g:SrcExpl_searchLocalDef = 1 
 "                                                                              " 
 " // Do not let the Source Explorer update the tags file when opening          " 
-let g:SrcExpl_isUpdateTags = 0 
+let g:SrcExpl_isUpdateTags = 1
 "                                                                              " 
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to " 
 " //  create/update a tags file                                                " 
