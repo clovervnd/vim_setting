@@ -102,7 +102,7 @@ nmap <F3> :SrcExplToggle<CR>
 let g:SrcExpl_winHeight = 8 
 "                                                                              " 
 " // Set 100 ms for refreshing the Source Explorer                             " 
-let g:SrcExpl_refreshTime = 100 
+let g:SrcExpl_refreshTime = 500 
 "                                                                              " 
 " // Set "Enter" key to jump into the exact definition context                 " 
 let g:SrcExpl_jumpKey = "<ENTER>" 
@@ -122,10 +122,10 @@ let g:SrcExpl_pluginList = [
 " // Enable/Disable the local definition searching, and note that this is not  " 
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now. " 
 " // It only searches for a match with the keyword according to command 'gd'   " 
-let g:SrcExpl_searchLocalDef = 1 
+let g:SrcExpl_searchLocalDef = 0
 "                                                                              " 
 " // Do not let the Source Explorer update the tags file when opening          " 
-let g:SrcExpl_isUpdateTags = 1
+let g:SrcExpl_isUpdateTags = 0
 "                                                                              " 
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to " 
 " //  create/update a tags file                                                " 
