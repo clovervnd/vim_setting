@@ -225,5 +225,7 @@ Plugin 'taglist.vim'
 " Plugin SrcExpl
 " https://github.com/vim-scripts/SrcExpl.git 
 " Plugin trinity
-" https://github.com/vim-scripts/Trinity.git
+" https://github.com/vim-scripts/Trinity.GitHub
+Plugin 'The-NERD-Commenter'
+
 "-------------------------------------------------------------------------------------------
