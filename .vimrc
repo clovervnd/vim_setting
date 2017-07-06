@@ -48,6 +48,11 @@ set hlsearch
 
 "execute pathogen#infect()
 
+" Show the foldcolumn
+set foldcolumn=1
+
+" Enalbe mouse in vim
+set mouse=a
 "-------------------------------------------------------------------------------------------
 " Ctags setting 
 
@@ -56,7 +61,7 @@ set tags+=~/Desktop/Double-MAC/tags
 
 "-------------------------------------------------------------------------------------------
 " Cscope setting 
-set csprg=/usr/bin/cscope
+set csprg=/usr/local/bin/cscope
 set csto=0
 set cst
 set nocsverb
