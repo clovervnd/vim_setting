@@ -89,6 +89,11 @@ let NERDTreeWinPos = "right"
 map <F5> :TrinityToggleAll<CR>
 
 "-------------------------------------------------------------------------------------------
+"Nerd Commenter
+
+let NERDSpaceDelims=1
+
+"-------------------------------------------------------------------------------------------
 " Source Explorer settings
 " F8 Key = SrcExpl Toggling
 nmap <C-H> <C-W>h                            
