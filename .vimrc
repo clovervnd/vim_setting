@@ -85,6 +85,7 @@ set csverb
 
 map <F2> :TlistToggle<CR>
 map <F4> :NERDTreeToggle<CR>
+nnoremap <C-F> :NERDTreeFind<CR>
 let NERDTreeWinPos = "right"
 map <F5> :TrinityToggleAll<CR>
 
