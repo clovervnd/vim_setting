@@ -215,7 +215,15 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 Plugin 'user/L9', {'name': 'newL9'}
-
+Plugin 'The-NERD-Tree'
+Plugin 'AutoComplPop'
+Plugin 'taglist.vim'
+" Plugin SrcExpl
+" https://github.com/vim-scripts/SrcExpl.git 
+" Plugin trinity
+" https://github.com/vim-scripts/Trinity.GitHub
+Plugin 'The-NERD-Commenter'
+Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -230,13 +238,5 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-Plugin 'The-NERD-Tree'
-Plugin 'AutoComplPop'
-Plugin 'taglist.vim'
-" Plugin SrcExpl
-" https://github.com/vim-scripts/SrcExpl.git 
-" Plugin trinity
-" https://github.com/vim-scripts/Trinity.GitHub
-Plugin 'The-NERD-Commenter'
 
 "-------------------------------------------------------------------------------------------
