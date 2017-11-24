@@ -189,6 +189,12 @@ syntax on
 filetype plugin indent on
 
 "-------------------------------------------------------------------------------------------
+" CtrlP settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP' 
+
+
+"-------------------------------------------------------------------------------------------
 " Vundle settings
 			
 " set the runtime path to include Vundle and initialize
@@ -229,6 +235,17 @@ Plugin 'taglist.vim'
 Plugin 'The-NERD-Commenter'
 " Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
 Plugin 'davidhalter/jedi-vim'
+" Fancy status bar
+Plugin 'vim-airline/vim-airline'
+" git add/remove monitoring
+Plugin 'airblade/vim-gitgutter'
+" syntax check at :w!
+Plugin 'scrooloose/syntastic'
+" <C-P> file search
+Plugin 'ctrlpvim/ctrlp.vim'
+" coffee-scirpt grammar
+Plugin 'kchmck/vim-coffee-script'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
