@@ -215,14 +215,19 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 Plugin 'user/L9', {'name': 'newL9'}
+" Navigating directories
 Plugin 'The-NERD-Tree'
+" Auto completion in c, c++
 Plugin 'AutoComplPop'
+" Function navigator
 Plugin 'taglist.vim'
 " Plugin SrcExpl
 " https://github.com/vim-scripts/SrcExpl.git 
 " Plugin trinity
 " https://github.com/vim-scripts/Trinity.GitHub
+" Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
 Plugin 'The-NERD-Commenter'
+" Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
 Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
