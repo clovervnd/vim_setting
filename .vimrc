@@ -195,6 +195,29 @@ let g:ctrlp_cmd = 'CtrlP'
 
 
 "-------------------------------------------------------------------------------------------
+"" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+"-------------------------------------------------------------------------------------------
+"" delimitMate
+let delimitMate_expand_cr=1
+"-------------------------------------------------------------------------------------------
+"" vim-multiple-cursor
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+"-------------------------------------------------------------------------------------------
+"" vim-smooth-scroll
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
+"-------------------------------------------------------------------------------------------
 " Vundle settings
 			
 " set the runtime path to include Vundle and initialize
@@ -245,6 +268,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 " coffee-scirpt grammar
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'Raimondi/delimitMate'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
