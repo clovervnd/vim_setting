@@ -241,7 +241,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 " syntax check at :w!
 Plugin 'scrooloose/syntastic'
-" <C-P> file search
+" <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
 Plugin 'ctrlpvim/ctrlp.vim'
 " coffee-scirpt grammar
 Plugin 'kchmck/vim-coffee-script'
