@@ -51,8 +51,9 @@ set hlsearch
 " Show the foldcolumn
 set foldcolumn=1
 
-" Enalbe mouse in vim
+" Enable mouse in vim
 set mouse=a
+
 "-------------------------------------------------------------------------------------------
 " Ctags setting 
 
@@ -217,6 +218,12 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
+"-------------------------------------------------------------------------------------------
+" vim-g
+
+let g:vim_g_command = "G"
+let g:vim_g_f_command = "Gf"
+
 "-------------------------------------------------------------------------------------------
 " Vundle settings
 			
