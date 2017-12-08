@@ -224,10 +224,10 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 "-------------------------------------------------------------------------------------------
 "" vim-smooth-scroll
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
+" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
+" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
+" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
 "-------------------------------------------------------------------------------------------
 " vim-g
 
@@ -235,6 +235,22 @@ let g:vim_g_command = "G"
 let g:vim_g_f_command = "Gf"
 
 "-------------------------------------------------------------------------------------------
+" YouCompleteMe
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+"To avoid conflict snippets
+let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+
+nnoremap <leader>g :YcmCompleter GoTo<CR>
+nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
+nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>p :YcmCompleter GetParent<CR>
+
 " Vundle settings
 			
 " set the runtime path to include Vundle and initialize
@@ -282,10 +298,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " coffee-scirpt grammar
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'terryma/vim-smooth-scroll'
+" Plugin 'terryma/vim-smooth-scroll'
 Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+" Install YCM only in high performance desktop
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
