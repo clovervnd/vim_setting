@@ -251,6 +251,7 @@ nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>p :YcmCompleter GetParent<CR>
 
+"-------------------------------------------------------------------------------------------
 " Vundle settings
 			
 " set the runtime path to include Vundle and initialize
