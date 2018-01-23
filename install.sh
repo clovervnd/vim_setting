@@ -23,3 +23,6 @@ mkdir ~/.vim/plugin
 cp -r SrcExpl/plugin/srcexpl.vim ~/.vim/plugin/ 
 cp -r Trinity/plugin/trinity.vim ~/.vim/plugin/ 
 cp -r vim-g/plugin/g.vim ~/.vim/plugin/ 
+
+mkdir ~/.vim/colors
+cp -r ./colors ~/.vim/colors

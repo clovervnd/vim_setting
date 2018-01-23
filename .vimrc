@@ -255,6 +255,8 @@ hi PmenuSbar ctermbg=blue
 
 syntax enable
 
+colorscheme smyck
+" colorscheme molokai
 
 syntax on
 filetype plugin indent on
