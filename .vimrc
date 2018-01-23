@@ -1,4 +1,76 @@
 "-------------------------------------------------------------------------------------------
+" Vundle settings
+			
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Navigating directories
+Plugin 'The-NERD-Tree'
+" Auto completion in c, c++
+Plugin 'AutoComplPop'
+" Function navigator
+Plugin 'taglist.vim'
+" Plugin SrcExpl
+" https://github.com/vim-scripts/SrcExpl.git 
+" Plugin trinity
+" https://github.com/vim-scripts/Trinity.GitHub
+" Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
+Plugin 'The-NERD-Commenter'
+" Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
+Plugin 'davidhalter/jedi-vim'
+" Fancy status bar
+Plugin 'vim-airline/vim-airline'
+" git add/remove monitoring
+Plugin 'airblade/vim-gitgutter'
+" syntax check at :w!
+Plugin 'scrooloose/syntastic'
+" <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
+Plugin 'ctrlpvim/ctrlp.vim'
+" coffee-scirpt grammar
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-smooth-scroll'
+Plugin 'Raimondi/delimitMate'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+" Install YCM only in high performance desktop
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'nanotech/jellybeans.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+"-------------------------------------------------------------------------------------------
 " VIM settings
 filetype on
 filetype plugin on
@@ -174,8 +246,7 @@ hi PmenuSel ctermbg=yellow ctermfg=black
 hi PmenuSbar ctermbg=blue
 
 "-------------------------------------------------------------------------------------------
-" Solarized theme setting 
-
+" Theme setting
 "if has('gui_running')
 "	set background=light
 "else
@@ -183,8 +254,7 @@ hi PmenuSbar ctermbg=blue
 "endif
 
 syntax enable
-"set background=dark
-"colorscheme solarized
+
 
 syntax on
 filetype plugin indent on
@@ -252,73 +322,14 @@ nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>p :YcmCompleter GetParent<CR>
 
 "-------------------------------------------------------------------------------------------
-" Vundle settings
-			
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+"syntastic
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Navigating directories
-Plugin 'The-NERD-Tree'
-" Auto completion in c, c++
-Plugin 'AutoComplPop'
-" Function navigator
-Plugin 'taglist.vim'
-" Plugin SrcExpl
-" https://github.com/vim-scripts/SrcExpl.git 
-" Plugin trinity
-" https://github.com/vim-scripts/Trinity.GitHub
-" Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
-Plugin 'The-NERD-Commenter'
-" Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
-Plugin 'davidhalter/jedi-vim'
-" Fancy status bar
-Plugin 'vim-airline/vim-airline'
-" git add/remove monitoring
-Plugin 'airblade/vim-gitgutter'
-" syntax check at :w!
-Plugin 'scrooloose/syntastic'
-" <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
-Plugin 'ctrlpvim/ctrlp.vim'
-" coffee-scirpt grammar
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'terryma/vim-smooth-scroll'
-Plugin 'Raimondi/delimitMate'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-" Install YCM only in high performance desktop
-Plugin 'Valloric/YouCompleteMe'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 "-------------------------------------------------------------------------------------------
