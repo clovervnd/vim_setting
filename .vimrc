@@ -53,6 +53,7 @@ Plugin 'honza/vim-snippets'
 " Install YCM only in high performance desktop
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'severin-lemaignan/vim-minimap'
 
 
 " All of your Plugins must be added before the following line
@@ -125,6 +126,7 @@ set foldcolumn=1
 
 " Enable mouse in vim
 set mouse=a
+
 
 "-------------------------------------------------------------------------------------------
 " Buffer setting
@@ -284,6 +286,14 @@ colorscheme smyck
 syntax on
 filetype plugin indent on
 
+if has("autocmd")
+	if v:version > 701
+		autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\)')
+		autocmd Syntax * call matchadd('Question', '\W\zs\(HELP\|DEBUG\)')
+		autocmd Syntax * call matchadd('ErrorMsg', '\W\zs\(ERROR\|FATAL\)')
+	endif
+endif
+"TODO: Add more highlighting ... T
 "-------------------------------------------------------------------------------------------
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
