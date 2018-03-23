@@ -54,6 +54,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 
 " All of your Plugins must be added before the following line
@@ -226,7 +227,7 @@ let g:SrcExpl_pluginList = [
          \ "_NERD_tree_", 
          \ "Source_Explorer" 
      \ ] 
-                                                                              
+
 " // Enable/Disable the local definition searching, and note that this is not  " 
 " // guaranteed to work, the Source Explorer doesn't check the syntax for now. " 
 " // It only searches for a match with the keyword according to command 'gd'   " 
@@ -271,29 +272,35 @@ hi PmenuSbar ctermbg=blue
 
 "-------------------------------------------------------------------------------------------
 " Theme setting
-"if has('gui_running')
-"	set background=light
-"else
-"	set background=dark
-"endif
 
 syntax enable
+syntax on
+filetype plugin indent on
+
+if has('gui_running')
+	set background=light
+else
+	set background=dark
+endif
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+
 
 set t_Co=256
 colorscheme smyck
 " colorscheme molokai
-
-syntax on
-filetype plugin indent on
 
 if has("autocmd")
 	if v:version > 701
 		autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\)')
 		autocmd Syntax * call matchadd('Question', '\W\zs\(HELP\|DEBUG\)')
 		autocmd Syntax * call matchadd('ErrorMsg', '\W\zs\(ERROR\|FATAL\)')
+		autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
+		autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=235
 	endif
 endif
-"TODO: Add more highlighting ... T
+"TODO: Add more highlighting ... 
 "-------------------------------------------------------------------------------------------
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
