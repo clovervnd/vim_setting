@@ -54,7 +54,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'severin-lemaignan/vim-minimap'
-" Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 
 " All of your Plugins must be added before the following line
@@ -283,13 +283,14 @@ else
 	set background=dark
 endif
 
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 0
+let g:indent_guides_auto_colors = 0
 " set cursorcolumn
 set cursorline
 
 map <F6> :set cursorcolumn!<CR>
-map <F7> :set cursorline!<CR>
+" map <F7> :set cursorline!<CR>
+map <F7> :IndentGuidesToggle<CR>
 
 set t_Co=256
 colorscheme smyck
@@ -300,8 +301,8 @@ if has("autocmd")
 		autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\)')
 		autocmd Syntax * call matchadd('Question', '\W\zs\(HELP\|DEBUG\)')
 		autocmd Syntax * call matchadd('ErrorMsg', '\W\zs\(ERROR\|FATAL\)')
-		" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
-		" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=235
+		autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=236
+		autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=235
 	endif
 endif
 "TODO: Add more highlighting ... 
