@@ -126,7 +126,7 @@ set hlsearch
 set foldcolumn=1
 
 " Enable mouse in vim
-set mouse=a
+" set mouse=a
 
 
 "-------------------------------------------------------------------------------------------
@@ -155,11 +155,15 @@ nmap <leader>bl :ls<CR>
 " Ctags setting 
 
 set tags=./tags,tags
-set tags+=~/Desktop/Double-MAC/tags
+set tags+=~/Desktop/drone_swarm/ns-allinone-3.27
 
 "-------------------------------------------------------------------------------------------
-" Cscope setting 
-set csprg=/usr/local/bin/cscope
+" Cscope setting
+if has("macunix")
+	set csprg=/usr/local/bin/cscope
+else
+	set csprg=/usr/bin/cscope
+endif
 set csto=0
 set cst
 set nocsverb
