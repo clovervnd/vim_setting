@@ -128,6 +128,8 @@ set foldcolumn=1
 " Enable mouse in vim
 " set mouse=a
 
+set encoding=utf-8
+
 
 "-------------------------------------------------------------------------------------------
 " Buffer setting
@@ -155,7 +157,8 @@ nmap <leader>bl :ls<CR>
 " Ctags setting 
 
 set tags=./tags,tags
-set tags+=~/Desktop/drone_swarm/ns-allinone-3.27
+set tags+=~/Desktop/drone_swarm/ns-allinone-3.26
+set tags+=~/Desktop/drone_swarm/v2v
 
 "-------------------------------------------------------------------------------------------
 " Cscope setting
@@ -181,6 +184,15 @@ else
     cs add /usr/src/linux/cscope.out
 endif
 set csverb
+
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 "-------------------------------------------------------------------------------------------
 " Taglist, Nerd, Trinity settings
