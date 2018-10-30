@@ -46,7 +46,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " coffee-scirpt grammar
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'terryma/vim-smooth-scroll'
+Plugin 'terryma/vim-smooth-scroll'
 Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -157,8 +157,8 @@ nmap <leader>bl :ls<CR>
 " Ctags setting 
 
 set tags=./tags,tags
-set tags+=~/Desktop/drone_swarm/ns-allinone-3.26
-set tags+=~/Desktop/drone_swarm/v2v
+set tags+=/mnt/HDD1/joonki/drone_swarm/ns-allinone-3.28
+" set tags+=/mnt/HDD1/joonki/drone_swarm/v2v
 
 "-------------------------------------------------------------------------------------------
 " Cscope setting
@@ -320,7 +320,7 @@ endif
 "-------------------------------------------------------------------------------------------
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP' 
+let g:ctrlp_cmd = 'CtrlPMRU' 
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -350,10 +350,10 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 "-------------------------------------------------------------------------------------------
 "" vim-smooth-scroll
-" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
-" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
-" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
-" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 1, 10)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 1, 10)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 1, 5)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 1, 5)<CR>
 "-------------------------------------------------------------------------------------------
 " vim-g
 
