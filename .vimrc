@@ -1,6 +1,6 @@
 "-------------------------------------------------------------------------------------------
 " Vundle settings
-			
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -9,7 +9,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -17,18 +16,18 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'git://git.wincent.com/command-t.git'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Navigating directories
 Plugin 'The-NERD-Tree'
 " Auto completion in c, c++
-Plugin 'AutoComplPop'
+" Plugin 'AutoComplPop'
 " Function navigator
 Plugin 'taglist.vim'
 " Plugin SrcExpl
-" https://github.com/vim-scripts/SrcExpl.git 
+" https://github.com/vim-scripts/SrcExpl.git
 " Plugin trinity
 " https://github.com/vim-scripts/Trinity.GitHub
 " Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
@@ -39,8 +38,6 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-airline/vim-airline'
 " git add/remove monitoring
 Plugin 'airblade/vim-gitgutter'
-" syntax check at :w!
-Plugin 'scrooloose/syntastic'
 " <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
 Plugin 'ctrlpvim/ctrlp.vim'
 " coffee-scirpt grammar
@@ -55,6 +52,60 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'tpope/vim-surround'
+" syntax check at :w!
+" Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
+
+Plugin 'Lokaltog/vim-easymotion'
+"cursor move in one screen
+" <leader> <leader> w
+" <leader> <leader> ge
+" <leader> <leader> s
+
+Plugin 'textobj-user'
+Plugin 'mattn/vim-textobj-url'
+Plugin 'textobj-entire'
+Plugin 'textobj-line'
+Plugin 'vim-indent-object'
+
+Plugin 'Quich-Filter'
+" line filtering
+
+Plugin 'rking/ag.vim'
+"find string
+
+Plugin 'pangloss/vim-simplefold'
+" folding codes
+
+Plugin 'godlygeek/tabular'
+" line alignment
+
+Plugin 'sgur/ctrlp-extensions.vim'
+" add cmdline to ctrlp
+
+Plugin 'vim-scripts/DrawIt'
+" draw lines with ascii
+" :read !figlet example
+
+Plugin 'bad-whitespace'
+" You can erase the bad whitespace with the command |EraseBadWhitespace|
+" You can manually toggle the highlighting for the current buffer with the
+" commands |ShowBadWhitespace| |HideBadWhitespace| |ToggleBadWhitespace|
+"
+Plugin 'vim-scripts/WhiteWash'
+Plugin 'chrisbra/unicode.vim'
+
+Plugin 'haya14busa/incsearch.vim'
+" highlight when searching
+
+Plugin 'haya14busa/incsearch-easymotion.vim'
+
+Plugin 'haya14busa/incsearch-fuzzy.vim'
+
+Plugin 'justinmk/vim-sneak'
+
+
 
 
 " All of your Plugins must be added before the following line
@@ -154,7 +205,7 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " 모든 버퍼와 각 버퍼 상태 출력
 nmap <leader>bl :ls<CR>
 "-------------------------------------------------------------------------------------------
-" Ctags setting 
+" Ctags setting
 
 set tags=./tags,tags
 set tags+=/mnt/HDD1/joonki/drone_swarm/ns-allinone-3.28
@@ -185,12 +236,12 @@ else
 endif
 set csverb
 
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
@@ -211,80 +262,80 @@ let NERDSpaceDelims=1
 "-------------------------------------------------------------------------------------------
 " Source Explorer settings
 " F8 Key = SrcExpl Toggling
-nmap <C-H> <C-W>h                            
+nmap <C-H> <C-W>h
 "왼쪽 창으로 이동
-nmap <C-J> <C-W>j                              
+nmap <C-J> <C-W>j
 "하단(preview) 창으로 이동
-nmap <C-K> <C-W>k                             
+nmap <C-K> <C-W>k
 "상단 창으로 이동
-nmap <C-L> <C-W>l                              
+nmap <C-L> <C-W>l
 "오른쪽 창으로 이동
 
-" // The switch of the Source Explorer                                         " 
-nmap <F3> :SrcExplToggle<CR> 
-"                                                                              " 
-" // Set the height of Source Explorer window                                  " 
-let g:SrcExpl_winHeight = 8 
-"                                                                              " 
-" // Set 100 ms for refreshing the Source Explorer                             " 
-let g:SrcExpl_refreshTime = 500 
-"                                                                              " 
-" // Set "Enter" key to jump into the exact definition context                 " 
-let g:SrcExpl_jumpKey = "<ENTER>" 
-"                                                                              " 
-" // Set "Space" key for back from the definition context                      " 
-let g:SrcExpl_gobackKey = "<SPACE>" 
-"                                                                              " 
-" // In order to avoid conflicts, the Source Explorer should know what plugins " 
-" // except itself are using buffers. And you need add their buffer names into " 
-" // below listaccording to the command ":buffers!"                            " 
-let g:SrcExpl_pluginList = [ 
-         \ "__Tag_List__", 
-         \ "_NERD_tree_", 
-         \ "Source_Explorer" 
-     \ ] 
+" // The switch of the Source Explorer                                         "
+nmap <F3> :SrcExplToggle<CR>
+"                                                                              "
+" // Set the height of Source Explorer window                                  "
+let g:SrcExpl_winHeight = 8
+"                                                                              "
+" // Set 100 ms for refreshing the Source Explorer                             "
+let g:SrcExpl_refreshTime = 500
+"                                                                              "
+" // Set "Enter" key to jump into the exact definition context                 "
+let g:SrcExpl_jumpKey = "<ENTER>"
+"                                                                              "
+" // Set "Space" key for back from the definition context                      "
+let g:SrcExpl_gobackKey = "<SPACE>"
+"                                                                              "
+" // In order to avoid conflicts, the Source Explorer should know what plugins "
+" // except itself are using buffers. And you need add their buffer names into "
+" // below listaccording to the command ":buffers!"                            "
+let g:SrcExpl_pluginList = [
+         \ "__Tag_List__",
+         \ "_NERD_tree_",
+         \ "Source_Explorer"
+     \ ]
 
-" // Enable/Disable the local definition searching, and note that this is not  " 
-" // guaranteed to work, the Source Explorer doesn't check the syntax for now. " 
-" // It only searches for a match with the keyword according to command 'gd'   " 
+" // Enable/Disable the local definition searching, and note that this is not  "
+" // guaranteed to work, the Source Explorer doesn't check the syntax for now. "
+" // It only searches for a match with the keyword according to command 'gd'   "
 let g:SrcExpl_searchLocalDef = 0
-"                                                                              " 
-" // Do not let the Source Explorer update the tags file when opening          " 
+"                                                                              "
+" // Do not let the Source Explorer update the tags file when opening          "
 let g:SrcExpl_isUpdateTags = 0
-"                                                                              " 
-" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to " 
-" //  create/update a tags file                                                " 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
-"                                                                              " 
-" // Set "<F8>" key for updating the tags file artificially                   " 
-let g:SrcExpl_updateTagsKey = "<F8>" 
-"                                                                              " 
-" // Set "<F6>" key for displaying the previous definition in the jump list    " 
-let g:SrcExpl_prevDefKey = "<F6>" 
-"                                                                              " 
-" // Set "<F7>" key for displaying the next definition in the jump list        " 
-let g:SrcExpl_nextDefKey = "<F7>" 
+"                                                                              "
+" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to "
+" //  create/update a tags file                                                "
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+"                                                                              "
+" // Set "<F8>" key for updating the tags file artificially                   "
+let g:SrcExpl_updateTagsKey = "<F8>"
+"                                                                              "
+" // Set "<F6>" key for displaying the previous definition in the jump list    "
+let g:SrcExpl_prevDefKey = "<F6>"
+"                                                                              "
+" // Set "<F7>" key for displaying the next definition in the jump list        "
+let g:SrcExpl_nextDefKey = "<F7>"
 
 "-------------------------------------------------------------------------------------------
-" AutoCompletePop settings 
-function! InsertTabWrapper()
-	let col = col('.') - 1
-	if !col || getline('.')[col-1]!~'\k'
-		return "\<TAB>"
-	else
-		if pumvisible()
-			return "\<C-N>"
-		else
-			return "\<C-N>\<C-P>"
-		end
-	endif
-endfunction
+" AutoCompletePop settings
+" function! InsertTabWrapper()
+	" let col = col('.') - 1
+	" if !col || getline('.')[col-1]!~'\k'
+		" return "\<TAB>"
+	" else
+		" if pumvisible()
+			" return "\<C-N>"
+		" else
+			" return "\<C-N>\<C-P>"
+		" end
+	" endif
+" endfunction
 
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
-hi Pmenu ctermbg=blue
-hi PmenuSel ctermbg=yellow ctermfg=black
-hi PmenuSbar ctermbg=blue
+" hi Pmenu ctermbg=blue
+" hi PmenuSel ctermbg=yellow ctermfg=black
+" hi PmenuSbar ctermbg=blue
 
 "-------------------------------------------------------------------------------------------
 " Theme setting
@@ -316,11 +367,11 @@ if has("autocmd")
 		autocmd Syntax * call matchadd('ErrorMsg', '\W\zs\(ERROR\|FATAL\)')
 	endif
 endif
-"TODO: Add more highlighting ... 
+"TODO: Add more highlighting ...
 "-------------------------------------------------------------------------------------------
 " CtrlP settings
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU' 
+let g:ctrlp_cmd = 'CtrlPMRU'
 
 let g:ctrlp_working_path_mode = 'ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -350,10 +401,10 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 "-------------------------------------------------------------------------------------------
 "" vim-smooth-scroll
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 1, 10)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 1, 10)<CR>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 1, 5)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 1, 5)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 2, 10)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2, 10)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 2, 5)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 2, 5)<CR>
 "-------------------------------------------------------------------------------------------
 " vim-g
 
@@ -388,6 +439,25 @@ nnoremap <leader>p :YcmCompleter GetParent<CR>
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
+" silent! nmap <F9> :SyntasticToggleMode<CR> \| :ALEToggle<CR>
+" let g:syntastic_mode_map = {
+    " \ "mode": "passive",
+    " \ "active_filetypes": [],
+    " \ "passive_filetypes": [] }
+
+"-------------------------------------------------------------------------------------------
+"ALE
+silent! nmap <F9> :ALEToggle<CR>
+" Write this in your vimrc file
+let g:ale_enabled = 0
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+" Set this if you want to.
+" This can be useful if you are combining ALE with
+" some other plugin which sets quickfix errors, etc.
+let g:ale_keep_list_window_open = 0
+
 "-------------------------------------------------------------------------------------------
 " vim-airline
 " 버퍼 목록 켜기
@@ -396,3 +466,68 @@ let g:airline#extensions#tabline#enabled = 1
 " 파일명만 출력
 let g:airline#extensions#tabline#fnamemod = ':t'
 "-------------------------------------------------------------------------------------------
+" QUICH-FILTER
+nnoremap ,fi :call FilteringNew().addToParameter('alt', @/).run()
+nnoremap ,g :call FilteringGetForSource().return()
+
+"-------------------------------------------------------------------------------------------
+" AG
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+    let g:ctrlp_use_caching = 0
+else
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+    let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['', '', ''],
+    \ }
+endif
+
+
+"-------------------------------------------------------------------------------------------
+" vim-simplefold
+let g:SimpylFold_docstring_preview=1
+
+"-------------------------------------------------------------------------------------------
+" TABULAR
+inoremap     :call align()a
+function! s:align()
+let p = '^\s*|\s.*\s|\s*$'
+if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+endif
+endfunction
+
+"-------------------------------------------------------------------------------------------
+" ctrlp extension
+let g:ctrlp_yankring_disable = 1
+
+"-------------------------------------------------------------------------------------------
+" INCSEARCH
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" :h g:incsearch#auto_nohlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+map z/ <Plug>(incsearch-easymotion-/)
+map z? <Plug>(incsearch-easymotion-?)
+map zg/ <Plug>(incsearch-easymotion-stay)
+
+map zx/ <Plug>(incsearch-fuzzy-/)
+map zx? <Plug>(incsearch-fuzzy-?)
+map zxg/ <Plug>(incsearch-fuzzy-stay)
