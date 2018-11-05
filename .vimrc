@@ -11,102 +11,135 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
+" plugin on GitHub repo
 Plugin 'L9'
-" Git plugin not hosted on GitHub
+" plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'git://git.wincent.com/command-t.git'
+" Fast file navigation for vim
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Navigating directories
 Plugin 'The-NERD-Tree'
-" Auto completion in c, c++
+" Navigating directories
 " Plugin 'AutoComplPop'
-" Function navigator
+" Auto completion in c, c++
 Plugin 'taglist.vim'
+" Function navigator
 " Plugin SrcExpl
 " https://github.com/vim-scripts/SrcExpl.git
 " Plugin trinity
 " https://github.com/vim-scripts/Trinity.GitHub
-" Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
 Plugin 'The-NERD-Commenter'
-" Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
+" Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
 Plugin 'davidhalter/jedi-vim'
-" Fancy status bar
+" Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
 Plugin 'vim-airline/vim-airline'
-" git add/remove monitoring
+" Fancy status bar
 Plugin 'airblade/vim-gitgutter'
-" <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
+" git add/remove monitoring
 Plugin 'ctrlpvim/ctrlp.vim'
-" coffee-scirpt grammar
+" <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
 Plugin 'kchmck/vim-coffee-script'
+" coffee-scirpt grammar
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'terryma/vim-smooth-scroll'
 Plugin 'Raimondi/delimitMate'
+" Auto [], {}
 Plugin 'SirVer/ultisnips'
+" autocomplete code, e.g., switch, ...
 Plugin 'honza/vim-snippets'
-" Install YCM only in high performance desktop
+" code autocomplete library
 Plugin 'Valloric/YouCompleteMe'
+" Install YCM only in high performance desktop
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'severin-lemaignan/vim-minimap'
+" <leader> mm : open
+" <leader> mc : close
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
-" syntax check at :w!
+" cs, ds, yss, ysiw
 " Plugin 'scrooloose/syntastic'
+" syntax check at :w!
 Plugin 'w0rp/ale'
-
 Plugin 'Lokaltog/vim-easymotion'
 "cursor move in one screen
 " <leader> <leader> w
 " <leader> <leader> ge
 " <leader> <leader> s
-
 Plugin 'textobj-user'
 Plugin 'mattn/vim-textobj-url'
 Plugin 'textobj-entire'
 Plugin 'textobj-line'
 Plugin 'vim-indent-object'
-
 Plugin 'Quich-Filter'
 " line filtering
-
+" ,fi
+" ,g
 Plugin 'rking/ag.vim'
 "find string
-
+":Ag
 Plugin 'pangloss/vim-simplefold'
 " folding codes
-
+" zf, zo, zO, zc, zC, zR, zM, zE, zd
 Plugin 'godlygeek/tabular'
 " line alignment
-
+" :Tab /|
 Plugin 'sgur/ctrlp-extensions.vim'
 " add cmdline to ctrlp
-
 Plugin 'vim-scripts/DrawIt'
 " draw lines with ascii
 " :read !figlet example
-
 Plugin 'bad-whitespace'
 " You can erase the bad whitespace with the command |EraseBadWhitespace|
 " You can manually toggle the highlighting for the current buffer with the
 " commands |ShowBadWhitespace| |HideBadWhitespace| |ToggleBadWhitespace|
-"
 Plugin 'vim-scripts/WhiteWash'
 Plugin 'chrisbra/unicode.vim'
-
 Plugin 'haya14busa/incsearch.vim'
 " highlight when searching
-
 Plugin 'haya14busa/incsearch-easymotion.vim'
-
+"zx/
 Plugin 'haya14busa/incsearch-fuzzy.vim'
-
+"z/
 Plugin 'justinmk/vim-sneak'
-
-
-
+" s or S or ;
+Plugin 't9md/vim-textmanip'
+" A-h,j,k,l
+Plugin 'majutsushi/tagbar'
+" F6
+Plugin 'tpope/vim-repeat'
+Plugin 'morhetz/gruvbox'
+Plugin 'MultipleSearch'
+" ,h to add search
+" ,H reset
+Plugin 'VisIncr'
+" ctrl-v to be virtual block mode
+" :I to increase the number
+Plugin 'visSum.vim'
+" virtual mode <leader> su
+Plugin 'tpope/vim-abolish'
+" snake_case --> crs
+" mixed case --> crm
+" UPPER_CASE --> cru
+" dash case  --> cr-
+" dot.case   --> cr.
+" space case --> cr<spc>
+" Title case --> crt
+Plugin 'LeafCage/yankround.vim'
+" <F10>
+Plugin 'vim-jp/vital.vim'
+" Plugin 'mhinz/vim-signify'
+" mark updated, added, ... lines, git
+Plugin 'plasticboy/vim-markdown'
+Plugin 'peterrincker/vim-argumentative'
+" <, >, [, ],
+Plugin 'foosoft/vim-argwrap'
+" ,l argument horizontal, vertical align
+Plugin 'sjl/gundo.vim'
+" open undo history
+Plugin 'will133/vim-dirdiff'
+" :DirDiff
+Plugin 'blueyed/vim-diminactive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -125,6 +158,8 @@ filetype plugin indent on    " required
 
 "-------------------------------------------------------------------------------------------
 " VIM settings
+" :nmap <F1> :echo<CR>
+
 filetype on
 filetype plugin on
 
@@ -248,11 +283,11 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "-------------------------------------------------------------------------------------------
 " Taglist, Nerd, Trinity settings
 
-map <F2> :TlistToggle<CR>
+" map <F6> :TlistToggle<CR>
 map <F4> :NERDTreeToggle<CR>
 nnoremap <C-F> :NERDTreeFind<CR>
 let NERDTreeWinPos = "right"
-map <F5> :TrinityToggleAll<CR>
+" map <F5> :TrinityToggleAll<CR>
 
 "-------------------------------------------------------------------------------------------
 "Nerd Commenter
@@ -353,12 +388,13 @@ endif
 " set cursorcolumn
 set cursorline
 
-map <F7> :set cursorcolumn!<CR>
+" map <F7> :set cursorcolumn!<CR>
 map <F8> :set cursorline!<CR>
 
 set t_Co=256
 colorscheme smyck
 " colorscheme molokai
+" colorscheme gruvbox
 
 if has("autocmd")
 	if v:version > 701
@@ -401,10 +437,10 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 "-------------------------------------------------------------------------------------------
 "" vim-smooth-scroll
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 2, 10)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2, 10)<CR>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 2, 5)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 2, 5)<CR>
+" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 2, 10)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2, 10)<CR>
+" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 2, 5)<CR>
+" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 2, 5)<CR>
 "-------------------------------------------------------------------------------------------
 " vim-g
 
@@ -447,7 +483,7 @@ nnoremap <leader>p :YcmCompleter GetParent<CR>
 
 "-------------------------------------------------------------------------------------------
 "ALE
-silent! nmap <F9> :ALEToggle<CR>
+nmap <F7> :ALEToggle<CR>
 " Write this in your vimrc file
 let g:ale_enabled = 0
 let g:ale_set_loclist = 0
@@ -467,8 +503,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 "-------------------------------------------------------------------------------------------
 " QUICH-FILTER
-nnoremap ,fi :call FilteringNew().addToParameter('alt', @/).run()
-nnoremap ,g :call FilteringGetForSource().return()
+nnoremap ,f :call FilteringNew().addToParameter('alt', @/).run()<CR>
+nnoremap ,g :call FilteringGetForSource().return()<CR>
 
 "-------------------------------------------------------------------------------------------
 " AG
@@ -524,10 +560,64 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-map z/ <Plug>(incsearch-easymotion-/)
-map z? <Plug>(incsearch-easymotion-?)
-map zg/ <Plug>(incsearch-easymotion-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 
-map zx/ <Plug>(incsearch-fuzzy-/)
-map zx? <Plug>(incsearch-fuzzy-?)
-map zxg/ <Plug>(incsearch-fuzzy-stay)
+map zx/ <Plug>(incsearch-easymotion-/)
+map zx? <Plug>(incsearch-easymotion-?)
+map zxg/ <Plug>(incsearch-easymotion-stay)
+"-------------------------------------------------------------------------------------------
+" textmanip
+xmap <Space>d <Plug>(textmanip-duplicate-down)
+nmap <Space>d <Plug>(textmanip-duplicate-down)
+xmap <Space>D <Plug>(textmanip-duplicate-up)
+nmap <Space>D <Plug>(textmanip-duplicate-up)
+
+xmap ∆ <Plug>(textmanip-move-down)
+xmap ˚ <Plug>(textmanip-move-up)
+xmap ˙ <Plug>(textmanip-move-left)
+xmap ¬ <Plug>(textmanip-move-right)
+
+" toggle insert/replace with <F10>
+" nmap <F10> <Plug>(textmanip-toggle-mode)
+" xmap <F10> <Plug>(textmanip-toggle-mode)
+"-------------------------------------------------------------------------------------------
+" Tagbar
+nmap <F2> :TagbarToggle<CR>
+let g:tagbar_left=1
+
+"-------------------------------------------------------------------------------------------
+" Indent guide
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+nmap <F1> :IndentGuidesToggle<CR>
+
+"-------------------------------------------------------------------------------------------
+" MultipleSearch
+
+let g:MultipleSearchMaxColors=11
+let g:MultipleSearchColorSequence="darkcyan,gray,LightCyan,LightBlue,LightGreen,blue,green,magenta,cyan,gray,brown"
+let g:MultipleSearchTextColorSequence="white,DarkRed,black,black,black,white,black,white,red,black,white"
+nnoremap  ,H :SearchReset<CR>
+nnoremap  ,h :SearchBuffers
+
+"-------------------------------------------------------------------------------------------
+" Yankround
+let g:yankround_max_history = 50
+nmap <F5> :CtrlPYankRound<CR>
+
+"-------------------------------------------------------------------------------------------
+" vim-argwrap
+nnoremap ,l :ArgWrap<CR>
+
+"-------------------------------------------------------------------------------------------
+" diminactive
+let g:diminactive_enable_focus = 1
+:hi ColorColumn ctermbg=235 guibg=#eee8d5
+
+"-------------------------------------------------------------------------------------------
+" Gundo
+let g:gundo_prefer_python3 = 1
+nmap <F6> :GundoToggle<CR>
