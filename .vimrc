@@ -601,7 +601,7 @@ let g:MultipleSearchMaxColors=11
 let g:MultipleSearchColorSequence="darkcyan,gray,LightCyan,LightBlue,LightGreen,blue,green,magenta,cyan,gray,brown"
 let g:MultipleSearchTextColorSequence="white,DarkRed,black,black,black,white,black,white,red,black,white"
 nnoremap  ,H :SearchReset<CR>
-nnoremap  ,h :SearchBuffers
+nnoremap  ,h :SearchBuffers 
 
 "-------------------------------------------------------------------------------------------
 " Yankround
