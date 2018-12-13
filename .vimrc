@@ -32,7 +32,7 @@ Plugin 'taglist.vim'
 " https://github.com/vim-scripts/Trinity.GitHub
 Plugin 'The-NERD-Commenter'
 " Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 " Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
 Plugin 'vim-airline/vim-airline'
 " Fancy status bar
@@ -73,7 +73,7 @@ Plugin 'textobj-line'
 Plugin 'vim-indent-object'
 Plugin 'Quich-Filter'
 " line filtering
-" ,fi
+" ,f
 " ,g
 Plugin 'rking/ag.vim'
 "find string
@@ -126,7 +126,7 @@ Plugin 'tpope/vim-abolish'
 " space case --> cr<spc>
 " Title case --> crt
 Plugin 'LeafCage/yankround.vim'
-" <F10>
+" <F5>
 Plugin 'vim-jp/vital.vim'
 " Plugin 'mhinz/vim-signify'
 " mark updated, added, ... lines, git
@@ -456,13 +456,16 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_python_binary_path = '/usr/local/bin/python2.7'
+let g:ycm_python_binary_path = '/home/joonki/Tensorflow/bin/python2.7'
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
-nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>tt :YcmCompleter GetTypeImprecise<CR>
 nnoremap <leader>p :YcmCompleter GetParent<CR>
+nnoremap <leader>n :YcmCompleter GoToReferences<CR>
+nnoremap <leader>k :YcmCompleter GetDoc<CR>
 
 "-------------------------------------------------------------------------------------------
 "syntastic
@@ -524,7 +527,7 @@ endif
 
 "-------------------------------------------------------------------------------------------
 " vim-simplefold
-let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_docstring_preview = 1
 
 "-------------------------------------------------------------------------------------------
 " TABULAR
