@@ -11,6 +11,9 @@ sudo apt-get install figlet
 brew install vim
 brew install ctags
 brew install cscope
+brew install the_silver_searcher
+brew install cmake
+brew install figlet
 
 cp mkcscope.sh /usr/bin/
 
