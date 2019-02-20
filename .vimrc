@@ -87,7 +87,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'sgur/ctrlp-extensions.vim'
 " add cmdline to ctrlp
 Plugin 'vim-scripts/DrawIt'
-" draw lines with ascii
+" draw lines with ascii, \di to start and \ds to end
 " :read !figlet example
 Plugin 'bad-whitespace'
 " You can erase the bad whitespace with the command |EraseBadWhitespace|
@@ -106,7 +106,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 't9md/vim-textmanip'
 " A-h,j,k,l
 Plugin 'majutsushi/tagbar'
-" F6
+" F2
 Plugin 'tpope/vim-repeat'
 Plugin 'morhetz/gruvbox'
 Plugin 'MultipleSearch'
@@ -460,7 +460,7 @@ let g:ycm_python_binary_path = '/home/joonki/Tensorflow/bin/python2.7'
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
-nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
 nnoremap <leader>tt :YcmCompleter GetTypeImprecise<CR>
 nnoremap <leader>p :YcmCompleter GetParent<CR>
