@@ -126,7 +126,7 @@ Plugin 'tpope/vim-abolish'
 " space case --> cr<spc>
 " Title case --> crt
 Plugin 'LeafCage/yankround.vim'
-" <F10>
+" <F6>
 Plugin 'vim-jp/vital.vim'
 " Plugin 'mhinz/vim-signify'
 " mark updated, added, ... lines, git
@@ -387,6 +387,10 @@ endif
 
 " set cursorcolumn
 set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+autocmd VimEnter,Colorscheme * :hi CursorLine cterm=NONE ctermbg=237 guibg=237
 
 " map <F7> :set cursorcolumn!<CR>
 map <F8> :set cursorline!<CR>
@@ -398,8 +402,8 @@ colorscheme smyck
 
 if has("autocmd")
 	if v:version > 701
-		autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\)')
-		autocmd Syntax * call matchadd('Question', '\W\zs\(HELP\|DEBUG\)')
+		autocmd Syntax * call matchadd('WildMenu', '\W\zs\(NOTE\|INFO\|IDEA\)')
+		autocmd Syntax * call matchadd('DiffAdd', '\W\zs\(HELP\|DEBUG\)')
 		autocmd Syntax * call matchadd('ErrorMsg', '\W\zs\(ERROR\|FATAL\)')
 	endif
 endif
@@ -456,13 +460,17 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_python_binary_path = '/usr/local/bin/python2.7'
+let g:ycm_python_binary_path = '/home/joonki/Tensorflow3/bin/python3.5'
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
-nnoremap <leader>d :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>d :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>t :YcmCompleter GetType<CR>
+nnoremap <leader>tt :YcmCompleter GetTypeImprecise<CR>
 nnoremap <leader>p :YcmCompleter GetParent<CR>
+nnoremap <leader>n :YcmCompleter GoToReferences<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>k :YcmCompleter GetDoc<CR>
 
 "-------------------------------------------------------------------------------------------
 "syntastic
@@ -598,8 +606,11 @@ nmap <F1> :IndentGuidesToggle<CR>
 " MultipleSearch
 
 let g:MultipleSearchMaxColors=11
-let g:MultipleSearchColorSequence="darkcyan,gray,LightCyan,LightBlue,LightGreen,blue,green,magenta,cyan,gray,brown"
-let g:MultipleSearchTextColorSequence="white,DarkRed,black,black,black,white,black,white,red,black,white"
+" let g:MultipleSearchColorSequence="darkcyan,gray,LightCyan,LightBlue,LightGreen,blue,green,magenta,cyan,gray,brown"
+" let g:MultipleSearchTextColorSequence="white,DarkRed,black,black,black,white,black,white,red,black,white"
+
+let g:MultipleSearchColorSequence="green,LightGreen,LightBlue,LightCyan,lightred,lightyellow,magenta,cyan,brown,darkcyan,gray"
+let g:MultipleSearchTextColorSequence="black,black,black,black,black,black,black,black,black,black,black"
 nnoremap  ,H :SearchReset<CR>
 nnoremap  ,h :SearchBuffers 
 

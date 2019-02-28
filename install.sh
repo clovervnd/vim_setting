@@ -1,17 +1,4 @@
 #!/bin/bash
-
-sudo apt-get install vim
-sudo apt-get install ctags
-sudo apt-get install cscope
-sudo apt install build-essential cmake3 python3-dev
-sudo apt-get install silversearcher-ag
-sudo apt-get install figlet
-
-
-brew install vim
-brew install ctags
-brew install cscope
-
 cp mkcscope.sh /usr/bin/
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
