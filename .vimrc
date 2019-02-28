@@ -32,7 +32,7 @@ Plugin 'taglist.vim'
 " https://github.com/vim-scripts/Trinity.GitHub
 Plugin 'The-NERD-Commenter'
 " Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 " Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
 Plugin 'vim-airline/vim-airline'
 " Fancy status bar
@@ -73,7 +73,7 @@ Plugin 'textobj-line'
 Plugin 'vim-indent-object'
 Plugin 'Quich-Filter'
 " line filtering
-" ,fi
+" ,f
 " ,g
 Plugin 'rking/ag.vim'
 "find string
@@ -87,7 +87,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'sgur/ctrlp-extensions.vim'
 " add cmdline to ctrlp
 Plugin 'vim-scripts/DrawIt'
-" draw lines with ascii
+" draw lines with ascii, \di to start and \ds to end
 " :read !figlet example
 Plugin 'bad-whitespace'
 " You can erase the bad whitespace with the command |EraseBadWhitespace|
@@ -106,7 +106,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 't9md/vim-textmanip'
 " A-h,j,k,l
 Plugin 'majutsushi/tagbar'
-" F6
+" F2
 Plugin 'tpope/vim-repeat'
 Plugin 'morhetz/gruvbox'
 Plugin 'MultipleSearch'
@@ -126,7 +126,7 @@ Plugin 'tpope/vim-abolish'
 " space case --> cr<spc>
 " Title case --> crt
 Plugin 'LeafCage/yankround.vim'
-" <F6>
+" <F5>
 Plugin 'vim-jp/vital.vim'
 " Plugin 'mhinz/vim-signify'
 " mark updated, added, ... lines, git
@@ -460,7 +460,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_python_binary_path = '/home/joonki/Tensorflow3/bin/python3.5'
+let g:ycm_python_binary_path = '/home/joonki/Tensorflow/bin/python2.7'
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
@@ -532,7 +532,7 @@ endif
 
 "-------------------------------------------------------------------------------------------
 " vim-simplefold
-let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_docstring_preview = 1
 
 "-------------------------------------------------------------------------------------------
 " TABULAR
