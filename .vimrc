@@ -106,7 +106,7 @@ Plugin 'justinmk/vim-sneak'
 Plugin 't9md/vim-textmanip'
 " A-h,j,k,l
 Plugin 'majutsushi/tagbar'
-" F6
+" F2
 Plugin 'tpope/vim-repeat'
 Plugin 'morhetz/gruvbox'
 Plugin 'MultipleSearch'
@@ -140,6 +140,20 @@ Plugin 'sjl/gundo.vim'
 Plugin 'will133/vim-dirdiff'
 " :DirDiff
 Plugin 'blueyed/vim-diminactive'
+
+"NOTE plugin eunuch.vim
+" :Delete: Delete a buffer and the file on disk simultaneously.
+" :Unlink: Like :Delete, but keeps the now empty buffer.
+" :Move: Rename a buffer and the file on disk simultaneously.
+" :Rename: Like :Move, but relative to the current file's containing directory.
+" :Chmod: Change the permissions of the current file.
+" :Mkdir: Create a directory, defaulting to the parent of the current file.
+" :Cfind: Run find and load the results into the quickfix list.
+" :Clocate: Run locate and load the results into the quickfix list.
+" :Lfind/:Llocate: Like above, but use the location list.
+" :Wall: Write every open window. Handy for kicking off tools like guard.
+" :SudoWrite: Write a privileged file with sudo.
+" :SudoEdit: Edit a privileged file with sudo.
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -287,7 +301,7 @@ nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 map <F4> :NERDTreeToggle<CR>
 nnoremap <C-F> :NERDTreeFind<CR>
 let NERDTreeWinPos = "right"
-" map <F5> :TrinityToggleAll<CR>
+map <F9> :TrinityToggleAll<CR>
 
 "-------------------------------------------------------------------------------------------
 "Nerd Commenter
@@ -390,7 +404,6 @@ set cursorline
 hi cursorline cterm=none term=none
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
-autocmd VimEnter,Colorscheme * :hi CursorLine cterm=NONE ctermbg=237 guibg=237
 
 " map <F7> :set cursorcolumn!<CR>
 map <F8> :set cursorline!<CR>
@@ -399,6 +412,7 @@ set t_Co=256
 colorscheme smyck
 " colorscheme molokai
 " colorscheme gruvbox
+autocmd VimEnter,Colorscheme * :hi CursorLine ctermbg=237 "guibg=237
 
 if has("autocmd")
 	if v:version > 701
@@ -460,7 +474,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_python_binary_path = '/home/joonki/Tensorflow3/bin/python3.5'
+let g:ycm_python_binary_path = '/home/joonki/anaconda3/envs/ulm_env/bin/python'
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
@@ -493,7 +507,7 @@ nnoremap <leader>k :YcmCompleter GetDoc<CR>
 "ALE
 nmap <F7> :ALEToggle<CR>
 " Write this in your vimrc file
-let g:ale_enabled = 0
+let g:ale_enabled = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
@@ -502,6 +516,15 @@ let g:ale_open_list = 1
 " some other plugin which sets quickfix errors, etc.
 let g:ale_keep_list_window_open = 0
 
+" In ~/.vim/vimrc, or somewhere similar.
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'python': ['isort','yapf','autopep8', 'add_blank_lines_for_python_control_statements', 'black'],
+\}
+
+" NOTE PYTHON
+" Install flake8, isort, yapf
 "-------------------------------------------------------------------------------------------
 " vim-airline
 " 버퍼 목록 켜기
