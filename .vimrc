@@ -58,7 +58,7 @@ Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 " cs, ds, yss, ysiw
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 " syntax check at :w!
 Plugin 'w0rp/ale'
 Plugin 'Lokaltog/vim-easymotion'
@@ -507,7 +507,7 @@ nnoremap <leader>k :YcmCompleter GetDoc<CR>
 "ALE
 nmap <F7> :ALEToggle<CR>
 " Write this in your vimrc file
-let g:ale_enabled = 1
+let g:ale_enabled = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
