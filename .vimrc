@@ -58,7 +58,7 @@ Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tpope/vim-surround'
 " cs, ds, yss, ysiw
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " syntax check at :w!
 Plugin 'w0rp/ale'
 Plugin 'Lokaltog/vim-easymotion'
@@ -73,13 +73,14 @@ Plugin 'textobj-line'
 Plugin 'vim-indent-object'
 Plugin 'Quich-Filter'
 " line filtering
-" ,fi
+" ,f
 " ,g
 Plugin 'rking/ag.vim'
 "find string
 ":Ag
 Plugin 'pangloss/vim-simplefold'
 " folding codes
+" :Fold UNQUOTED_REGEXP
 " zf, zo, zO, zc, zC, zR, zM, zE, zd
 Plugin 'godlygeek/tabular'
 " line alignment
@@ -257,7 +258,7 @@ nmap <leader>bl :ls<CR>
 " Ctags setting
 
 set tags=./tags,tags
-set tags+=/mnt/HDD1/joonki/drone_swarm/ns-allinone-3.28
+set tags+=/mnt/HDD1/joonki/drone_swarm/ns-allinone-3.28/ns-3.28
 " set tags+=/mnt/HDD1/joonki/drone_swarm/v2v
 
 "-------------------------------------------------------------------------------------------
@@ -424,6 +425,8 @@ endif
 "TODO: Add more highlighting ...
 "-------------------------------------------------------------------------------------------
 " CtrlP settings
+" Use Ag over Grep
+" set grepprg=ag\ --nogroup\ --nocolor
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 
