@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
 sudo apt-get install vim
 sudo apt-get install ctags
 sudo apt-get install cscope
