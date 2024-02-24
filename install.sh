@@ -18,27 +18,43 @@ elif [[ "$(uname)" == "Darwin" ]]; then
     brew install figlet
 fi
 
-cp mkcscope.sh /usr/bin/
+# For c/c++ programming
+# cp mkcscope.sh /usr/bin/
 
+# Install Vim plugin manager Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Save backup of vimrc file
 rm ~/.vimrc_old
 mv ~/.vimrc ~/.vimrc_old
 cp .vimrc ~/
+
+# Copy color scheme
+if [ ! -d "~/.vim" ]; then
+    mkdir ~/.vim
+fi
+cp -r ./colors ~/.vim/colors
+
+
+# Install plugins
 vim -c 'PluginInstall' -c 'qa!'
 git clone https://github.com/vim-scripts/SrcExpl.git
 git clone https://github.com/vim-scripts/Trinity.git
 git clone https://github.com/szw/vim-g.git
 
-cd ~/.vim/bundle/YouCompleteMe
-python3 install.py --clang-completer
-cd -
+# Not used. Auto completion engine YouCompleteMe
+# cd ~/.vim/bundle/YouCompleteMe
+# python3 install.py --clang-completer
+# cd -
 
+# Add additional plugins
 mkdir ~/.vim/plugin
-cp -r SrcExpl/plugin/srcexpl.vim ~/.vim/plugin/
 cp -r Trinity/plugin/trinity.vim ~/.vim/plugin/
 cp -r vim-g/plugin/g.vim ~/.vim/plugin/
 
-cp -r ./colors ~/.vim/colors
+# Not used. for c/c++ programming
+# cp -r SrcExpl/plugin/srcexpl.vim ~/.vim/plugin/
+
 
 mkdir -p ~/.vim/pack/tpope/start
 cd ~/.vim/pack/tpope/start

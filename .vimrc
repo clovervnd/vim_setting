@@ -48,9 +48,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 " autocomplete code, e.g., switch, ...
 Plugin 'honza/vim-snippets'
-" code autocomplete library
-Plugin 'Valloric/YouCompleteMe'
-" Install YCM only in high performance desktop
+" Not used. Auto completion engine YouCompleteMe
+" Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'severin-lemaignan/vim-minimap'
 " <leader> mm : open
@@ -263,37 +263,37 @@ set tags+=/mnt/HDD1/joonki/drone_swarm/ns-allinone-3.28/ns-3.28
 
 "-------------------------------------------------------------------------------------------
 " Cscope setting
-if has("macunix")
-	set csprg=/usr/local/bin/cscope
-else
-	set csprg=/usr/bin/cscope
-endif
-set csto=0
-set cst
-set nocsverb
-if filereadable("./cscope.out")
-    cs add ./cscope.out
-elseif filereadable("../cscope.out")
-    cs add ../cscope.out
-elseif filereadable("../../cscope.out")
-    cs add ../../cscope.out
-elseif filereadable("../../../cscope.out")
-    cs add ../../../cscope.out
-elseif filereadable("../../../../cscope.out")
-    cs add ../../../../cscope.out
-else
-    cs add /usr/src/linux/cscope.out
-endif
-set csverb
+" if has("macunix")
+" 	set csprg=/usr/local/bin/cscope
+" else
+" 	set csprg=/usr/bin/cscope
+" endif
+" set csto=0
+" set cst
+" set nocsverb
+" if filereadable("./cscope.out")
+"     cs add ./cscope.out
+" elseif filereadable("../cscope.out")
+"     cs add ../cscope.out
+" elseif filereadable("../../cscope.out")
+"     cs add ../../cscope.out
+" elseif filereadable("../../../cscope.out")
+"     cs add ../../../cscope.out
+" elseif filereadable("../../../../cscope.out")
+"     cs add ../../../../cscope.out
+" else
+"     cs add /usr/src/linux/cscope.out
+" endif
+" set csverb
 
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+" nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+" nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+" nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 "-------------------------------------------------------------------------------------------
 " Taglist, Nerd, Trinity settings
