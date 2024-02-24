@@ -1,21 +1,22 @@
 #!/bin/bash
 
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update
-sudo apt-get install vim
-sudo apt-get install ctags
-sudo apt-get install cscope
-sudo apt install build-essential cmake3 python3-dev
-sudo apt-get install silversearcher-ag
-sudo apt-get install figlet
-
-
-brew install vim
-brew install ctags
-brew install cscope
-brew install the_silver_searcher
-brew install cmake
-brew install figlet
+if [[ "$(uname)" == "Linux" ]]; then
+    sudo add-apt-repository ppa:jonathonf/vim
+    sudo apt update
+    sudo apt-get install vim
+    sudo apt-get install ctags
+    sudo apt-get install cscope
+    sudo apt install build-essential cmake3 python3-dev
+    sudo apt-get install silversearcher-ag
+    sudo apt-get install figlet
+elif [[ "$(uname)" == "Darwin" ]]; then
+    brew install vim
+    brew install ctags
+    brew install cscope
+    brew install the_silver_searcher
+    brew install cmake
+    brew install figlet
+fi
 
 cp mkcscope.sh /usr/bin/
 
