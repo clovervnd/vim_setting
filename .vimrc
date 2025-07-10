@@ -1,342 +1,128 @@
-"-------------------------------------------------------------------------------------------
-" Vundle settings
+"========================================================================================================
+" VIM CONFIGURATION
+"========================================================================================================
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'tpope/vim-fugitive'
-" plugin on GitHub repo
-Plugin 'L9'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'git://git.wincent.com/command-t.git'
-" Fast file navigation for vim
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-Plugin 'The-NERD-Tree'
-" Navigating directories
-" Plugin 'AutoComplPop'
-" Auto completion in c, c++
-Plugin 'taglist.vim'
-" Function navigator
-" Plugin SrcExpl
-" https://github.com/vim-scripts/SrcExpl.git
-" Plugin trinity
-" https://github.com/vim-scripts/Trinity.GitHub
-Plugin 'The-NERD-Commenter'
-" Great commenting tool, \cs: sexy comment, \c-space: toggle, \cm: minimum comment
-Plugin 'davidhalter/jedi-vim'
-" Make vim work with python, \d: definition, \g: assignment, \n: usage, ...
-Plugin 'vim-airline/vim-airline'
-" Fancy status bar
-Plugin 'airblade/vim-gitgutter'
-" git add/remove monitoring
-Plugin 'ctrlpvim/ctrlp.vim'
-" <C-p> file search <C-f>, <C-b> -> cycle between modes, <C-d> to switch to filename only search, ...
-Plugin 'kchmck/vim-coffee-script'
-" coffee-scirpt grammar
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Raimondi/delimitMate'
-" Auto [], {}
-Plugin 'SirVer/ultisnips'
-" autocomplete code, e.g., switch, ...
-Plugin 'honza/vim-snippets'
-" Not used. Auto completion engine YouCompleteMe
-" Plugin 'Valloric/YouCompleteMe'
-
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'severin-lemaignan/vim-minimap'
-" <leader> mm : open
-" <leader> mc : close
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'tpope/vim-surround'
-" cs, ds, yss, ysiw
-Plugin 'scrooloose/syntastic'
-" syntax check at :w!
-Plugin 'w0rp/ale'
-Plugin 'Lokaltog/vim-easymotion'
-"cursor move in one screen
-" <leader> <leader> w
-" <leader> <leader> ge
-" <leader> <leader> s
-Plugin 'textobj-user'
-Plugin 'mattn/vim-textobj-url'
-Plugin 'textobj-entire'
-Plugin 'textobj-line'
-Plugin 'vim-indent-object'
-Plugin 'Quich-Filter'
-" line filtering
-" ,f
-" ,g
-Plugin 'rking/ag.vim'
-"find string
-":Ag
-Plugin 'pangloss/vim-simplefold'
-" folding codes
-" :Fold UNQUOTED_REGEXP
-" zf, zo, zO, zc, zC, zR, zM, zE, zd
-Plugin 'godlygeek/tabular'
-" line alignment
-" :Tab /|
-Plugin 'sgur/ctrlp-extensions.vim'
-" add cmdline to ctrlp
-Plugin 'vim-scripts/DrawIt'
-" draw lines with ascii
-" :read !figlet example
-Plugin 'bad-whitespace'
-" You can erase the bad whitespace with the command |EraseBadWhitespace|
-" You can manually toggle the highlighting for the current buffer with the
-" commands |ShowBadWhitespace| |HideBadWhitespace| |ToggleBadWhitespace|
-Plugin 'vim-scripts/WhiteWash'
-Plugin 'chrisbra/unicode.vim'
-Plugin 'haya14busa/incsearch.vim'
-" highlight when searching
-Plugin 'haya14busa/incsearch-easymotion.vim'
-"zx/
-Plugin 'haya14busa/incsearch-fuzzy.vim'
-"z/
-Plugin 'justinmk/vim-sneak'
-" s or S or ;
-Plugin 't9md/vim-textmanip'
-" A-h,j,k,l
-Plugin 'majutsushi/tagbar'
-" F2
-Plugin 'tpope/vim-repeat'
-Plugin 'morhetz/gruvbox'
-Plugin 'MultipleSearch'
-" ,h to add search
-" ,H reset
-Plugin 'VisIncr'
-" ctrl-v to be virtual block mode
-" :I to increase the number
-Plugin 'visSum.vim'
-" virtual mode <leader> su
-Plugin 'tpope/vim-abolish'
-" snake_case --> crs
-" mixed case --> crm
-" UPPER_CASE --> cru
-" dash case  --> cr-
-" dot.case   --> cr.
-" space case --> cr<spc>
-" Title case --> crt
-Plugin 'LeafCage/yankround.vim'
-" <F6>
-Plugin 'vim-jp/vital.vim'
-" Plugin 'mhinz/vim-signify'
-" mark updated, added, ... lines, git
-Plugin 'plasticboy/vim-markdown'
-Plugin 'peterrincker/vim-argumentative'
-" <, >, [, ],
-Plugin 'foosoft/vim-argwrap'
-" ,l argument horizontal, vertical align
-Plugin 'sjl/gundo.vim'
-" open undo history
-Plugin 'will133/vim-dirdiff'
-" :DirDiff
-Plugin 'blueyed/vim-diminactive'
-
-"NOTE plugin eunuch.vim
-" :Delete: Delete a buffer and the file on disk simultaneously.
-" :Unlink: Like :Delete, but keeps the now empty buffer.
-" :Move: Rename a buffer and the file on disk simultaneously.
-" :Rename: Like :Move, but relative to the current file's containing directory.
-" :Chmod: Change the permissions of the current file.
-" :Mkdir: Create a directory, defaulting to the parent of the current file.
-" :Cfind: Run find and load the results into the quickfix list.
-" :Clocate: Run locate and load the results into the quickfix list.
-" :Lfind/:Llocate: Like above, but use the location list.
-" :Wall: Write every open window. Handy for kicking off tools like guard.
-" :SudoWrite: Write a privileged file with sudo.
-" :SudoEdit: Edit a privileged file with sudo.
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-"-------------------------------------------------------------------------------------------
-" VIM settings
-" :nmap <F1> :echo<CR>
-
+"--------------------------------------------------------------------------------------------------------
+" GENERAL VIM SETTINGS
+"--------------------------------------------------------------------------------------------------------
+set nocompatible              " Use Vim defaults (much better!)
 filetype on
 filetype plugin on
+filetype plugin indent on     " Enable file type detection and plugins
 
-" Use Vim defaults (much better!)
-
-set nocompatible
-
-" keep no backup file
-
-set nobackup
-
-" allow backspacing over everything in insert mode
-
-set backspace=2
-
-" always set autoindenting on
-
-set autoindent
-
-
+" Basic settings
+set nobackup                  " Keep no backup file
+set hidden                    " Hide buffers instead of closing them
+set backspace=2               " Allow backspacing over everything in insert mode
+set autoindent                " Always set autoindenting on
 set smartindent
-
-
-set ruler
-
-
+set ruler                     " Show cursor position
 set shiftwidth=2
-
-set number
-
 set tabstop=2
-
-" always limit the width of text to 1000
-
-set textwidth=1000
-
-" Turn off sound when hitting last line or typing erroneously
-
-set visualbell
-
-set nowrap
-
-" Switch on search pattern highlighting.
-
-set hlsearch
-
-"execute pathogen#infect()
-
-" Show the foldcolumn
-set foldcolumn=1
-
-" Enable mouse in vim
-" set mouse=a
-
+set textwidth=1000            " Always limit the width of text to 1000
+set number                    " Show line numbers
+set visualbell                " Turn off sound when hitting last line or typing erroneously
+set nowrap                    " Don't wrap lines
+set hlsearch                  " Switch on search pattern highlighting
+set foldcolumn=1              " Show the foldcolumn
 set encoding=utf-8
+" set mouse=a                 " Enable mouse in vim
 
-
-"-------------------------------------------------------------------------------------------
-" Buffer setting
-" This option hides buffers instead of closing them
-" This allows reopening undo history and marks are preserved
-set hidden
-
-" Create new buffer
-nmap <leader>T :enew<cr>
-
-" Move to next buffer
-nmap <leader>l :bnext<CR>
-
-" Move to previous buffer
-nmap <leader>h :bprevious<CR>
-
-" Close current buffer and move to previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
-
-" List all buffers with their status
-nmap <leader>bl :ls<CR>
-"-------------------------------------------------------------------------------------------
-" Ctags setting
-
+" Tags
 set tags=./tags,tags
 
-"-------------------------------------------------------------------------------------------
+"========================================================================================================
+" VUNDLE PLUGIN MANAGER
+"========================================================================================================
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-"-------------------------------------------------------------------------------------------
-" Taglist, Nerd, Trinity settings
+" Core plugins
+Plugin 'gmarik/Vundle.vim'                     " Let Vundle manage Vundle, required
+Plugin 'tpope/vim-fugitive'                    " Git integration
+Plugin 'L9'                                    " Utility functions library
 
-" map <F6> :TlistToggle<CR>
-map <F4> :NERDTreeToggle<CR>
-nnoremap <C-F> :NERDTreeFind<CR>
-let NERDTreeWinPos = "right"
-map <F9> :TrinityToggleAll<CR>
+" File navigation and search
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}    " Fast file navigation for vim
+Plugin 'The-NERD-Tree'                         " File explorer
+Plugin 'ctrlpvim/ctrlp.vim'                    " Fuzzy file finder
+Plugin 'sgur/ctrlp-extensions.vim'             " CtrlP extensions
+Plugin 'rking/ag.vim'                          " The silver searcher integration
 
-"-------------------------------------------------------------------------------------------
-"Nerd Commenter
+" Code navigation and tags
+Plugin 'taglist.vim'                           " Function navigator
+Plugin 'majutsushi/tagbar'                     " Display tags in a window
 
-let NERDSpaceDelims=1
+" Editing enhancements
+Plugin 'The-NERD-Commenter'                    " Commenting tool
+Plugin 'terryma/vim-multiple-cursors'          " Multiple cursor support
+Plugin 'Raimondi/delimitMate'                  " Auto-closing brackets
+Plugin 'tpope/vim-surround'                    " Surround text objects
+Plugin 'tpope/vim-repeat'                      " Enable repeating supported plugin maps
+Plugin 'tpope/vim-abolish'                     " Case coercion and substitution
+Plugin 't9md/vim-textmanip'                    " Text manipulation
+Plugin 'peterrincker/vim-argumentative'        " Text object for function arguments
+Plugin 'foosoft/vim-argwrap'                   " Wrap and unwrap function arguments
 
-"-------------------------------------------------------------------------------------------
-" Source Explorer settings
-" Window navigation shortcuts
-nmap <C-H> <C-W>h
-" Move to left window
-nmap <C-J> <C-W>j
-" Move to bottom window
-nmap <C-K> <C-W>k
-" Move to top window
-nmap <C-L> <C-W>l
-" Move to right window
+" Snippets and completion
+Plugin 'SirVer/ultisnips'                      " Snippet engine
+Plugin 'honza/vim-snippets'                    " Snippet collection
+Plugin 'davidhalter/jedi-vim'                  " Python autocompletion
 
-" // The switch of the Source Explorer                                         "
-nmap <F3> :SrcExplToggle<CR>
-"                                                                              "
-" // Set the height of Source Explorer window                                  "
-let g:SrcExpl_winHeight = 8
-"                                                                              "
-" // Set 100 ms for refreshing the Source Explorer                             "
-let g:SrcExpl_refreshTime = 500
-"                                                                              "
-" // Set "Enter" key to jump into the exact definition context                 "
-let g:SrcExpl_jumpKey = "<ENTER>"
-"                                                                              "
-" // Set "Space" key for back from the definition context                      "
-let g:SrcExpl_gobackKey = "<SPACE>"
-"                                                                              "
-" // In order to avoid conflicts, the Source Explorer should know what plugins "
-" // except itself are using buffers. And you need add their buffer names into "
-" // below listaccording to the command ":buffers!"                            "
-let g:SrcExpl_pluginList = [
-         \ "__Tag_List__",
-         \ "_NERD_tree_",
-         \ "Source_Explorer"
-     \ ]
+" Syntax and linting
+Plugin 'scrooloose/syntastic'                  " Syntax checking
+Plugin 'w0rp/ale'                              " Asynchronous lint engine
+Plugin 'kchmck/vim-coffee-script'              " CoffeeScript syntax
+Plugin 'plasticboy/vim-markdown'               " Markdown syntax
 
-" // Enable/Disable the local definition searching, and note that this is not  "
-" // guaranteed to work, the Source Explorer doesn't check the syntax for now. "
-" // It only searches for a match with the keyword according to command 'gd'   "
-let g:SrcExpl_searchLocalDef = 0
-"                                                                              "
-" // Do not let the Source Explorer update the tags file when opening          "
-let g:SrcExpl_isUpdateTags = 0
-"                                                                              "
-" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to "
-" //  create/update a tags file                                                "
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
-"                                                                              "
-" // Set "<F8>" key for updating the tags file artificially                   "
-let g:SrcExpl_updateTagsKey = "<F8>"
-"                                                                              "
-" // Set "<F6>" key for displaying the previous definition in the jump list    "
-let g:SrcExpl_prevDefKey = "<F6>"
-"                                                                              "
-" // Set "<F7>" key for displaying the next definition in the jump list        "
-let g:SrcExpl_nextDefKey = "<F7>"
+" UI enhancements
+Plugin 'vim-airline/vim-airline'               " Status bar
+Plugin 'airblade/vim-gitgutter'                " Git diff in the gutter
+Plugin 'severin-lemaignan/vim-minimap'         " Code minimap
+Plugin 'nathanaelkane/vim-indent-guides'       " Visual indent guides
+Plugin 'blueyed/vim-diminactive'               " Dim inactive windows
 
+" Theme and colors
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'morhetz/gruvbox'
 
-"-------------------------------------------------------------------------------------------
-" Theme setting
+" Movement and search
+Plugin 'Lokaltog/vim-easymotion'               " Fast cursor movement
+Plugin 'justinmk/vim-sneak'                    " Two-character search motion
+Plugin 'haya14busa/incsearch.vim'              " Improved incremental search
+Plugin 'haya14busa/incsearch-easymotion.vim'   " Incsearch + easymotion
+Plugin 'haya14busa/incsearch-fuzzy.vim'        " Fuzzy incremental search
+Plugin 'MultipleSearch'                        " Highlight multiple search patterns
 
+" Text objects
+Plugin 'textobj-user'                          " Create custom text objects
+Plugin 'mattn/vim-textobj-url'                 " URL text object
+Plugin 'textobj-entire'                        " Entire buffer text object
+Plugin 'textobj-line'                          " Line text object
+Plugin 'vim-indent-object'                     " Indent-based text object
+
+" Utilities
+Plugin 'Quich-Filter'                          " Line filtering
+Plugin 'pangloss/vim-simplefold'               " Code folding
+Plugin 'godlygeek/tabular'                     " Text alignment
+Plugin 'vim-scripts/DrawIt'                    " ASCII drawing
+Plugin 'bad-whitespace'                        " Whitespace highlighting
+Plugin 'vim-scripts/WhiteWash'                 " Remove trailing whitespace
+Plugin 'chrisbra/unicode.vim'                  " Unicode character insertion
+Plugin 'LeafCage/yankround.vim'                " Yank history
+Plugin 'vim-jp/vital.vim'                      " Vim library
+Plugin 'sjl/gundo.vim'                         " Undo tree visualization
+Plugin 'will133/vim-dirdiff'                   " Directory diff
+Plugin 'VisIncr'                               " Generate increasing sequences
+Plugin 'visSum.vim'                            " Sum numbers in visual selection
+
+call vundle#end()
+
+"========================================================================================================
+" THEME AND VISUAL SETTINGS
+"========================================================================================================
 syntax enable
 syntax on
-filetype plugin indent on
 
 if has('gui_running')
 	set background=light
@@ -344,21 +130,19 @@ else
 	set background=dark
 endif
 
-" set cursorcolumn
-set cursorline
-hi cursorline cterm=none term=none
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
-" map <F7> :set cursorcolumn!<CR>
-map <F8> :set cursorline!<CR>
-
 set t_Co=256
 colorscheme smyck
 " colorscheme molokai
 " colorscheme gruvbox
+
+" Cursor line settings
+set cursorline
+hi cursorline cterm=none term=none
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
 autocmd VimEnter,Colorscheme * :hi CursorLine ctermbg=237 "guibg=237
 
+" Custom highlighting for keywords
 if has("autocmd")
 	if v:version > 701
 		autocmd Syntax * call matchadd('WildMenu', '\W\zs\(NOTE\|INFO\|IDEA\)')
@@ -366,58 +150,120 @@ if has("autocmd")
 		autocmd Syntax * call matchadd('ErrorMsg', '\W\zs\(ERROR\|FATAL\)')
 	endif
 endif
-"TODO: Add more highlighting ...
-"-------------------------------------------------------------------------------------------
-" CtrlP settings
-" Use Ag over Grep
-" set grepprg=ag\ --nogroup\ --nocolor
+
+"========================================================================================================
+" KEY MAPPINGS - GENERAL
+"========================================================================================================
+
+" Buffer navigation
+nmap <leader>T :enew<cr>                       " Create new buffer
+nmap <leader>l :bnext<CR>                      " Move to next buffer
+nmap <leader>h :bprevious<CR>                  " Move to previous buffer
+nmap <leader>bq :bp <BAR> bd #<CR>             " Close current buffer and move to previous one
+nmap <leader>bl :ls<CR>                        " List all buffers
+
+" Window navigation
+nmap <C-H> <C-W>h                              " Move to left window
+nmap <C-J> <C-W>j                              " Move to bottom window
+nmap <C-K> <C-W>k                              " Move to top window
+nmap <C-L> <C-W>l                              " Move to right window
+
+" Toggle features
+map <F8> :set cursorline!<CR>                  " Toggle cursor line
+
+"========================================================================================================
+" PLUGIN CONFIGURATIONS
+"========================================================================================================
+
+"--------------------------------------------------------------------------------------------------------
+" NERDTree
+"--------------------------------------------------------------------------------------------------------
+map <F4> :NERDTreeToggle<CR>
+nnoremap <C-F> :NERDTreeFind<CR>
+let NERDTreeWinPos = "right"
+
+"--------------------------------------------------------------------------------------------------------
+" NERD Commenter
+"--------------------------------------------------------------------------------------------------------
+let NERDSpaceDelims=1
+
+"--------------------------------------------------------------------------------------------------------
+" Source Explorer
+"--------------------------------------------------------------------------------------------------------
+nmap <F3> :SrcExplToggle<CR>
+let g:SrcExpl_winHeight = 8
+let g:SrcExpl_refreshTime = 500
+let g:SrcExpl_jumpKey = "<ENTER>"
+let g:SrcExpl_gobackKey = "<SPACE>"
+let g:SrcExpl_pluginList = [
+         \ "__Tag_List__",
+         \ "_NERD_tree_",
+         \ "Source_Explorer"
+     \ ]
+let g:SrcExpl_searchLocalDef = 0
+let g:SrcExpl_isUpdateTags = 0
+let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+let g:SrcExpl_updateTagsKey = "<F8>"
+let g:SrcExpl_prevDefKey = "<F6>"
+let g:SrcExpl_nextDefKey = "<F7>"
+
+"--------------------------------------------------------------------------------------------------------
+" Trinity
+"--------------------------------------------------------------------------------------------------------
+map <F9> :TrinityToggleAll<CR>
+
+"--------------------------------------------------------------------------------------------------------
+" CtrlP
+"--------------------------------------------------------------------------------------------------------
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
-
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_yankring_disable = 1
 
+" Ag integration
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+else
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+    let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['', '', ''],
+    \ }
+endif
 
-"-------------------------------------------------------------------------------------------
-"" UltiSnips
+"--------------------------------------------------------------------------------------------------------
+" UltiSnips
+"--------------------------------------------------------------------------------------------------------
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-"-------------------------------------------------------------------------------------------
-"" delimitMate
+
+"--------------------------------------------------------------------------------------------------------
+" delimitMate
+"--------------------------------------------------------------------------------------------------------
 let delimitMate_expand_cr=1
-"-------------------------------------------------------------------------------------------
-"" vim-multiple-cursor
+
+"--------------------------------------------------------------------------------------------------------
+" vim-multiple-cursors
+"--------------------------------------------------------------------------------------------------------
 let g:multi_cursor_use_default_mapping=0
-" Default mapping
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-"-------------------------------------------------------------------------------------------
-"" vim-smooth-scroll
-" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 2, 10)<CR>
-" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 2, 10)<CR>
-" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 2, 5)<CR>
-" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 2, 5)<CR>
-"-------------------------------------------------------------------------------------------
-" vim-g
 
-let g:vim_g_command = "G"
-let g:vim_g_f_command = "Gf"
-
-"-------------------------------------------------------------------------------------------
-" YouCompleteMe
-
+"--------------------------------------------------------------------------------------------------------
+" YouCompleteMe (Currently commented out)
+"--------------------------------------------------------------------------------------------------------
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf = 0
-" To avoid conflict snippets
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -433,13 +279,12 @@ nnoremap <leader>n :YcmCompleter GoToReferences<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>k :YcmCompleter GetDoc<CR>
 
-"-------------------------------------------------------------------------------------------
-"syntastic
-
+"--------------------------------------------------------------------------------------------------------
+" Syntastic (Currently commented out)
+"--------------------------------------------------------------------------------------------------------
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
@@ -450,62 +295,41 @@ nnoremap <leader>k :YcmCompleter GetDoc<CR>
     " \ "active_filetypes": [],
     " \ "passive_filetypes": [] }
 
-"-------------------------------------------------------------------------------------------
-"ALE
+"--------------------------------------------------------------------------------------------------------
+" ALE (Asynchronous Lint Engine)
+"--------------------------------------------------------------------------------------------------------
 nmap <F7> :ALEToggle<CR>
-" Write this in your vimrc file
 let g:ale_enabled = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
-" Set this if you want to.
-" This can be useful if you are combining ALE with
-" some other plugin which sets quickfix errors, etc.
 let g:ale_keep_list_window_open = 0
-
-" In ~/.vim/vimrc, or somewhere similar.
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \   'python': ['isort','yapf','autopep8', 'add_blank_lines_for_python_control_statements', 'black'],
 \}
 
-" NOTE PYTHON
-" Install flake8, isort, yapf
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " vim-airline
-" Enable buffer list display
+"--------------------------------------------------------------------------------------------------------
 let g:airline#extensions#tabline#enabled = 1
-
-" Show only filename
 let g:airline#extensions#tabline#fnamemod = ':t'
-"-------------------------------------------------------------------------------------------
-" QUICH-FILTER
+
+"--------------------------------------------------------------------------------------------------------
+" Quick Filter
+"--------------------------------------------------------------------------------------------------------
 nnoremap ,f :call FilteringNew().addToParameter('alt', @/).run()<CR>
 nnoremap ,g :call FilteringGetForSource().return()<CR>
 
-"-------------------------------------------------------------------------------------------
-" AG
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-    let g:ctrlp_use_caching = 0
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['', '', ''],
-    \ }
-endif
-
-
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " vim-simplefold
+"--------------------------------------------------------------------------------------------------------
 let g:SimpylFold_docstring_preview=1
 
-"-------------------------------------------------------------------------------------------
-" TABULAR
+"--------------------------------------------------------------------------------------------------------
+" Tabular
+"--------------------------------------------------------------------------------------------------------
 inoremap     :call align()a
 function! s:align()
 let p = '^\s*|\s.*\s|\s*$'
@@ -518,17 +342,12 @@ if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~
 endif
 endfunction
 
-"-------------------------------------------------------------------------------------------
-" ctrlp extension
-let g:ctrlp_yankring_disable = 1
-
-"-------------------------------------------------------------------------------------------
-" INCSEARCH
-
+"--------------------------------------------------------------------------------------------------------
+" Incsearch
+"--------------------------------------------------------------------------------------------------------
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-" :h g:incsearch#auto_nohlsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
@@ -545,8 +364,10 @@ map zg/ <Plug>(incsearch-fuzzy-stay)
 map zx/ <Plug>(incsearch-easymotion-/)
 map zx? <Plug>(incsearch-easymotion-?)
 map zxg/ <Plug>(incsearch-easymotion-stay)
-"-------------------------------------------------------------------------------------------
+
+"--------------------------------------------------------------------------------------------------------
 " textmanip
+"--------------------------------------------------------------------------------------------------------
 xmap <Space>d <Plug>(textmanip-duplicate-down)
 nmap <Space>d <Plug>(textmanip-duplicate-down)
 xmap <Space>D <Plug>(textmanip-duplicate-up)
@@ -557,48 +378,81 @@ xmap ˚ <Plug>(textmanip-move-up)
 xmap ˙ <Plug>(textmanip-move-left)
 xmap ¬ <Plug>(textmanip-move-right)
 
-" toggle insert/replace with <F10>
-" nmap <F10> <Plug>(textmanip-toggle-mode)
-" xmap <F10> <Plug>(textmanip-toggle-mode)
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " Tagbar
+"--------------------------------------------------------------------------------------------------------
 nmap <F2> :TagbarToggle<CR>
 let g:tagbar_left=1
 
-"-------------------------------------------------------------------------------------------
-" Indent guide
+"--------------------------------------------------------------------------------------------------------
+" Indent Guides
+"--------------------------------------------------------------------------------------------------------
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=236
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
 nmap <F1> :IndentGuidesToggle<CR>
 
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " MultipleSearch
-
+"--------------------------------------------------------------------------------------------------------
 let g:MultipleSearchMaxColors=11
-" let g:MultipleSearchColorSequence="darkcyan,gray,LightCyan,LightBlue,LightGreen,blue,green,magenta,cyan,gray,brown"
-" let g:MultipleSearchTextColorSequence="white,DarkRed,black,black,black,white,black,white,red,black,white"
-
 let g:MultipleSearchColorSequence="green,LightGreen,LightBlue,LightCyan,lightred,lightyellow,magenta,cyan,brown,darkcyan,gray"
 let g:MultipleSearchTextColorSequence="black,black,black,black,black,black,black,black,black,black,black"
 nnoremap  ,H :SearchReset<CR>
 nnoremap  ,h :SearchBuffers 
 
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " Yankround
+"--------------------------------------------------------------------------------------------------------
 let g:yankround_max_history = 50
 nmap <F5> :CtrlPYankRound<CR>
 
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " vim-argwrap
+"--------------------------------------------------------------------------------------------------------
 nnoremap ,l :ArgWrap<CR>
 
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " diminactive
+"--------------------------------------------------------------------------------------------------------
 let g:diminactive_enable_focus = 1
 :hi ColorColumn ctermbg=235 guibg=#eee8d5
 
-"-------------------------------------------------------------------------------------------
+"--------------------------------------------------------------------------------------------------------
 " Gundo
+"--------------------------------------------------------------------------------------------------------
 let g:gundo_prefer_python3 = 1
 nmap <F6> :GundoToggle<CR>
+
+"--------------------------------------------------------------------------------------------------------
+" vim-g (Currently not configured)
+"--------------------------------------------------------------------------------------------------------
+let g:vim_g_command = "G"
+let g:vim_g_f_command = "Gf"
+
+"========================================================================================================
+" NOTES AND DOCUMENTATION
+"========================================================================================================
+" Plugin: eunuch.vim (not installed but documented)
+" :Delete: Delete a buffer and the file on disk simultaneously.
+" :Unlink: Like :Delete, but keeps the now empty buffer.
+" :Move: Rename a buffer and the file on disk simultaneously.
+" :Rename: Like :Move, but relative to the current file's containing directory.
+" :Chmod: Change the permissions of the current file.
+" :Mkdir: Create a directory, defaulting to the parent of the current file.
+" :Cfind: Run find and load the results into the quickfix list.
+" :Clocate: Run locate and load the results into the quickfix list.
+" :Lfind/:Llocate: Like above, but use the location list.
+" :Wall: Write every open window. Handy for kicking off tools like guard.
+" :SudoWrite: Write a privileged file with sudo.
+" :SudoEdit: Edit a privileged file with sudo.
+
+" TODO: Add more highlighting ...
+
+" NOTE PYTHON: Install flake8, isort, yapf for ALE
+
+" VUNDLE HELP:
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
