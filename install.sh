@@ -18,22 +18,21 @@ elif [[ "$(uname)" == "Darwin" ]]; then
     brew install figlet
 fi
 
-# For c/c++ programming
-# cp mkcscope.sh /usr/bin/
 
 # Install Vim plugin manager Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Save backup of vimrc file
-rm ~/.vimrc_old
-mv ~/.vimrc ~/.vimrc_old
+if [ -f ~/.vimrc ]; then
+    cp ~/.vimrc ~/.vimrc_old
+fi
 cp .vimrc ~/
 
 # Copy color scheme
-if [ ! -d "~/.vim" ]; then
-    mkdir ~/.vim
+if [ ! -d ~/.vim ]; then
+    mkdir -p ~/.vim
 fi
-cp -r ./colors ~/.vim/colors
+cp -r ./colors ~/.vim/
 
 
 # Install plugins
@@ -42,18 +41,12 @@ git clone https://github.com/vim-scripts/SrcExpl.git
 git clone https://github.com/vim-scripts/Trinity.git
 git clone https://github.com/szw/vim-g.git
 
-# Not used. Auto completion engine YouCompleteMe
-# cd ~/.vim/bundle/YouCompleteMe
-# python3 install.py --clang-completer
-# cd -
 
 # Add additional plugins
 mkdir ~/.vim/plugin
 cp -r Trinity/plugin/trinity.vim ~/.vim/plugin/
 cp -r vim-g/plugin/g.vim ~/.vim/plugin/
 
-# Not used. for c/c++ programming
-# cp -r SrcExpl/plugin/srcexpl.vim ~/.vim/plugin/
 
 
 mkdir -p ~/.vim/pack/tpope/start
