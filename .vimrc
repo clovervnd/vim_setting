@@ -234,66 +234,30 @@ set encoding=utf-8
 
 "-------------------------------------------------------------------------------------------
 " Buffer setting
-" 이 옵션은 버퍼를 수정한 직후 버퍼를 감춰지도록 한다.
-" 이 방법으로 버퍼를 사용하려면 거의 필수다.
+" This option hides buffers instead of closing them
+" This allows reopening undo history and marks are preserved
 set hidden
 
-" 버퍼 새로 열기
-" 원래 이 단축키로 바인딩해 두었던 :tabnew를 대체한다.
+" Create new buffer
 nmap <leader>T :enew<cr>
 
-" 다음 버퍼로 이동
+" Move to next buffer
 nmap <leader>l :bnext<CR>
 
-" 이전 버퍼로 이동
+" Move to previous buffer
 nmap <leader>h :bprevious<CR>
 
-" 현재 버퍼를 닫고 이전 버퍼로 이동
-" 탭 닫기 단축키를 대체한다.
+" Close current buffer and move to previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
 
-" 모든 버퍼와 각 버퍼 상태 출력
+" List all buffers with their status
 nmap <leader>bl :ls<CR>
 "-------------------------------------------------------------------------------------------
 " Ctags setting
 
 set tags=./tags,tags
-set tags+=/mnt/HDD1/joonki/drone_swarm/ns-allinone-3.28/ns-3.28
-" set tags+=/mnt/HDD1/joonki/drone_swarm/v2v
 
 "-------------------------------------------------------------------------------------------
-" Cscope setting
-" if has("macunix")
-" 	set csprg=/usr/local/bin/cscope
-" else
-" 	set csprg=/usr/bin/cscope
-" endif
-" set csto=0
-" set cst
-" set nocsverb
-" if filereadable("./cscope.out")
-"     cs add ./cscope.out
-" elseif filereadable("../cscope.out")
-"     cs add ../cscope.out
-" elseif filereadable("../../cscope.out")
-"     cs add ../../cscope.out
-" elseif filereadable("../../../cscope.out")
-"     cs add ../../../cscope.out
-" elseif filereadable("../../../../cscope.out")
-"     cs add ../../../../cscope.out
-" else
-"     cs add /usr/src/linux/cscope.out
-" endif
-" set csverb
-
-" nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-" nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-" nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-" nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-" nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-" nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-" nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-" nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 "-------------------------------------------------------------------------------------------
 " Taglist, Nerd, Trinity settings
@@ -311,15 +275,15 @@ let NERDSpaceDelims=1
 
 "-------------------------------------------------------------------------------------------
 " Source Explorer settings
-" F8 Key = SrcExpl Toggling
+" Window navigation shortcuts
 nmap <C-H> <C-W>h
-"왼쪽 창으로 이동
+" Move to left window
 nmap <C-J> <C-W>j
-"하단(preview) 창으로 이동
+" Move to bottom window
 nmap <C-K> <C-W>k
-"상단 창으로 이동
+" Move to top window
 nmap <C-L> <C-W>l
-"오른쪽 창으로 이동
+" Move to right window
 
 " // The switch of the Source Explorer                                         "
 nmap <F3> :SrcExplToggle<CR>
@@ -366,26 +330,6 @@ let g:SrcExpl_prevDefKey = "<F6>"
 " // Set "<F7>" key for displaying the next definition in the jump list        "
 let g:SrcExpl_nextDefKey = "<F7>"
 
-"-------------------------------------------------------------------------------------------
-" AutoCompletePop settings
-" function! InsertTabWrapper()
-	" let col = col('.') - 1
-	" if !col || getline('.')[col-1]!~'\k'
-		" return "\<TAB>"
-	" else
-		" if pumvisible()
-			" return "\<C-N>"
-		" else
-			" return "\<C-N>\<C-P>"
-		" end
-	" endif
-" endfunction
-
-" inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-
-" hi Pmenu ctermbg=blue
-" hi PmenuSel ctermbg=yellow ctermfg=black
-" hi PmenuSbar ctermbg=blue
 
 "-------------------------------------------------------------------------------------------
 " Theme setting
@@ -477,7 +421,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_python_binary_path = '/home/joonki/anaconda3/envs/ulm_env/bin/python'
+let g:ycm_python_binary_path = 'python'
 
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>gg :YcmCompleter GoToImprecise<CR>
@@ -530,10 +474,10 @@ let g:ale_fixers = {
 " Install flake8, isort, yapf
 "-------------------------------------------------------------------------------------------
 " vim-airline
-" 버퍼 목록 켜기
+" Enable buffer list display
 let g:airline#extensions#tabline#enabled = 1
 
-" 파일명만 출력
+" Show only filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 "-------------------------------------------------------------------------------------------
 " QUICH-FILTER

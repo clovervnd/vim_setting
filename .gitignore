@@ -1,0 +1,35 @@
+# Vim swap files
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.old
+
+# Cscope files
+cscope.out
+cscope.in.out
+cscope.po.out
+cscope.files
+
+# Tags
+tags
+TAGS
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.temp
