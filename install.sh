@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# OS detection logic
 if [[ "$(uname)" == "Linux" ]]; then
     sudo add-apt-repository ppa:jonathonf/vim
     sudo apt update
