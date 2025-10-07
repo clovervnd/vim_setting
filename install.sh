@@ -1,4 +1,5 @@
 #!/bin/bash
+# Testing
 
 set -e  # Exit on error
 
